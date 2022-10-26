@@ -1,0 +1,32 @@
+version: "3.7"
+
+services:
+  web_server:
+    build:
+      context: .
+      dockerfile: Dockerfile_webserver
+    ports:
+      - 8082:80
+    environment:
+      NGINX_HOST: semana3.com
+      NGINX_PORT: 80
+
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile_database
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 1162331
+      POSTGRES_USER: cesar_vasquez
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer:4.8.1
+    restart: always
+    ports:
+      - 8081:8080
+
+volumes:
+  pgdata:
