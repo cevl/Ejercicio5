@@ -14,9 +14,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'cd terraform'
-                sh 'terraform init'
-                sh 'terraform apply --auto-approve'
+                dir('terraform') {
+                    sh 'terraform init'
+                    sh 'terraform apply --auto-approve'
+                }
             }
         }
     }
