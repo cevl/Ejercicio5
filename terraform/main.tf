@@ -23,7 +23,8 @@ resource "digitalocean_droplet" "vm" {
             "sudo apt install -y docker-compose",
             "mkdir app",
             "cd app",
-            "git clone https://github.com/cevl/algo3 .",
+            "git clone https://github.com/cevl/Ejercicio5 .",
+            "cd terraform",
             "docker-compose -f docker-compose.yml up --build"
         ]
     }
