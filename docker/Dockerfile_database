@@ -1,4 +1,5 @@
 FROM postgres:14.5-alpine 
 COPY ./database.sql ./
+RUN export PGPASSWORD=1162331
 RUN psql -U cesar_vasquez -d Ejemplo -a -f ./database.sql
 RUN rm ./database.sql
