@@ -12,5 +12,5 @@ provider "digitalocean" {
 }
 
 data "digitalocean_ssh_key" "terraform" {
-  name = "my_key"
+  name = "Actividad5"
 }
