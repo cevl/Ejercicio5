@@ -29,3 +29,4 @@ resource "digitalocean_droplet" "vm" {
         ]
     }
 }
+
